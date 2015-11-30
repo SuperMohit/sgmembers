@@ -1,0 +1,18 @@
+package com.sg.members;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = SgmembersApplication.class)
+@WebAppConfiguration
+public class SgmembersApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+}
