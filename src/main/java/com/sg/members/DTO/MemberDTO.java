@@ -1,6 +1,5 @@
 package com.sg.members.DTO;
 
-import com.sg.members.entity.Race;
 
 public class MemberDTO {
 	

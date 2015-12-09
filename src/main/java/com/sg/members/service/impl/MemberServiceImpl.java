@@ -25,7 +25,7 @@ public class MemberServiceImpl implements MemberService {
 
 		List<Member> members = new ArrayList<>();
 		List<MemberDTO> memberDTOs = new ArrayList<>();
-		
+
 		try {
 
 			members = memberDAO.getMembers(query);
@@ -33,8 +33,8 @@ public class MemberServiceImpl implements MemberService {
 			for (Member member : members)
 				memberDTOs.add(Member.toMemberDTO(member));
 
-	   	} catch (Exception e) {
-           
+		} catch (Exception e) {
+
 			e.printStackTrace();
 
 		}
@@ -42,4 +42,26 @@ public class MemberServiceImpl implements MemberService {
 		return memberDTOs;
 	}
 
+	@Override
+	@Transactional
+	public List<MemberDTO> getAllMembers() {
+
+		List<Member> members = new ArrayList<>();
+		List<MemberDTO> memberDTOs = new ArrayList<>();
+
+		try {
+
+			members = memberDAO.getAllMembers();
+
+			for (Member member : members)
+				memberDTOs.add(Member.toMemberDTO(member));
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+
+		return memberDTOs;
+	}
 }

@@ -6,7 +6,7 @@ import com.sg.members.DTO.MemberDTO;
 
 public interface MemberService {
      
-	List<MemberDTO> getMembers(String query);
-
+	List<MemberDTO> getMembers(String query) ;
+    List<MemberDTO> getAllMembers();
 	
 }

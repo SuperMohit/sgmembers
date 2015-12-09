@@ -1,70 +1,95 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-  <head>  
-    <title>SG-Members</title> 
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-     <link rel="stylesheet" href="../static/css/sghome.css">
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  </head>
-  <body>
-   <div class="container wrap-con">
-   		<div class="row">
-   			<div class="col-sm-3" style="text-align:center">
-   				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                    	<tr>
-                            <td width="30%" height="115" align="left" valign="middle" style="text-align:center">
-                                <img src="http://www.societegenerale.in/files/logo_site_en.png" alt="Societe Generale" width="262" height="49">
-                            </td>                                     
-                        </tr>
-                    </tbody>
-    			</table>
-        	</div>
- 
-       <div class="col-sm-9" style="text-align:center;padding-top: 20px;">
-         
-	          <div class="row">
-	          	<label class="sg-greet"> Good Morning! </label>
-	          </div>
- 
-	          <div class="row">
-	          		<label class="mem-count"> Members 300! </label>
-	          </div>	
-       
-       </div>
+<html>
+<head>
+<title>SG-Members</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/sghome.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body ng-app="memberApp">
+	<div class="container wrap-con">
+		<div class="row">
+			<div class="col-sm-3" style="text-align: center">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td width="30%" height="115" align="left" valign="middle"
+								style="text-align: center"><img
+								src="http://www.societegenerale.in/files/logo_site_en.png"
+								alt="Societe Generale" width="262" height="49" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-    </div>
- 	
-		 	<div class="row">
-		 		 <div class="input-group">
-		 		 	       <input type="text" class="form-control" placeholder="status, weight, height...">
-						      <span class="input-group-btn">
-						        <button class="btn btn-default" type="button">Search!</button>
-						      </span>
-	     					 
-   				 </div><!-- /input-group -->
-		 	</div>
+			<div class="col-sm-9" style="text-align: center; padding-top: 20px;">
 
-   <div class="wrap-con" style="text-align:center;">
-       <div class="row row-style-1">
-       	 <div class="col-xs-3 col-style-1">
-       	 	<div class="color-label-1 color-index0" style="background-color: rgb(0, 51, 51);">
-       	 		<label class="deliverable-label-1">SM</label>
-       	 	</div> 
-       	
-       	</div>
-       	   <div class="col-xs-9 col-style-2">
-       	   	    <div class="row">
-       	   	    	 <label class="deliverable-label-1 label-align deliverable-label-height deliverable-name" data-value="0">SaaS metrics </label>
-       	   	     </div>
-       	   <div class="row row-style-2">
-       	   	         <label class="deliverable-label-1 deliverable-label-height label-color" style="text-align:left;">metrics for company's SaaS values</label>
-       	   </div>
-       	 
-       	  </div>
-       </div>
-   </div>		 	
+				<div class="row">
+					<label class="sg-greet"> Kya Kar raha hai bey MONOTOSH??</label>
+				</div>
 
+				<div class="row">
+					<label class="mem-count"> Members 300! </label>
+				</div>
+
+			</div>
+
+		</div>
+      
+      <div ng-controller="MemberController">
+		<div class="row" >
+			<div class="input-group">
+				<input type="text" class="form-control"
+					placeholder="status, weight, height..."  ng-model="query"/> <span class="input-group-btn">
+
+					<button class="btn btn-default" type="button"
+						ng-click="searchAllMembers()">Search!</button>
+				</span>
+
+			</div>
+			<!-- /input-group -->
+		</div>
+
+		<div class="wrap-con" style="text-align: center;">
+			<!--  -->
+		
+			<div class="row row-style-1" ng-repeat="m in members">
+				
+				<div class="col-xs-3 col-style-1">
+					<div class="color-label-1 color-index0"
+						style="background-color: rgb(0, 51, 51);">
+						
+						<label class="member-label-1"><span ng-bind="m.id"></span></label>
+					
+					</div>
+
+				</div>
+				
+				<div class="col-xs-9 col-style-2">
+<!-- 					<div class="row"> -->
+<!-- 						<label -->
+<!-- 							class="member-label-1 label-align member-label-height member-name" -->
+<!-- 							data-value="0">SaaS metrics </label> -->
+<!-- 					</div> -->
+					<div class="row row-style-2">
+						<label class="member-label-1 member-label-height label-color" style="text-align: left;">
+							<span ng-bind="m.status"></span>
+						</label>
+					</div>
+
+				</div>
+			</div>
+		
+		<!--  -->
+	
+		</div>
+
+	</div>
 </div>
-  </body>
-  </html>	
+	<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller/membercontroller.js"></script>
+	<script src="js/service/memberservice.js"></script>
+</body>
+</html>

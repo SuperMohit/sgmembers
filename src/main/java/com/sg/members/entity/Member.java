@@ -1,9 +1,11 @@
 package com.sg.members.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
 import org.apache.lucene.analysis.core.StopFilterFactory;
@@ -37,6 +39,7 @@ filters = {
 }
 )
 @Entity
+@Table(name="member")
 @Indexed
 public class Member {
 
@@ -94,7 +97,7 @@ public class Member {
 
 	
 
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, analyzer = @Analyzer(definition="ngram"))
+	
 	public boolean isIs_veg() {
 		return is_veg;
 	}
@@ -106,7 +109,8 @@ public class Member {
 	/**
 	 * @return the raceId
 	 */
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO,analyzer = @Analyzer(definition="ngram"))
+	
+	@Column(name="idrace")
 	public int getRaceId() {
 		return raceId;
 	}
@@ -121,7 +125,7 @@ public class Member {
 	/**
 	 * @return the weight
 	 */
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO,analyzer = @Analyzer(definition="ngram"))
+	
 	public int getWeight() {
 		return weight;
 	}
@@ -136,7 +140,7 @@ public class Member {
 	/**
 	 * @return the height
 	 */
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO,analyzer = @Analyzer(definition="ngram"))
+	
 	public int getHeight() {
 		return height;
 	}

@@ -1,13 +1,19 @@
 'use strict';
 
 App.controller('MemberController', ['$scope', 'MemberService', function($scope, MemberService) {
-          var self = this;
+        
+	      var self = $scope ;
           
           self.member = {"id" : null, "status" : "", "race": "", "weight": "", "height" : "", "is_veg":""};
           self.members = [];
           
+          self.query = "";
+          
           self.searchAllMembers = function(){
-        	  MemberService.searchAllMembers()
+        	 
+        	  console.log(self.query);
+        	 
+        	  MemberService.searchAllMembers(self.query)
                   .then(
       					       function(d) {
       						        self.members = d;
@@ -19,5 +25,26 @@ App.controller('MemberController', ['$scope', 'MemberService', function($scope, 
       			       );
           };
           
-} );
+          
+          self.fetchAllMembers = function () {
+        	  
+        	  MemberService.fetchAllUsers()
+        	      .then(
+        	    	     
+        	    		  function(d) {
+						        self.members = d;
+						        console.log(d);
+					       },
+      					
+					      function(errResponse){
+      						console.error('Error while fetching all members');
+      					}
+        	         
+        	     
+        	     );
+        	  
+        	  
+          };
+          
+}] );
 

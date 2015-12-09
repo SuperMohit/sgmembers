@@ -39,7 +39,7 @@
     border-radius: 50%;
 }
 
-.deliverable-label-1 {
+.member-label-1 {
     width: inherit;
     text-align: center;
     line-height: 54px;
@@ -51,7 +51,7 @@
 }
 
 
-.deliverable-label-height {
+.member-label-height {
     line-height: inherit !important;
     font-size: 15px;
 }

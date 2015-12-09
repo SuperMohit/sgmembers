@@ -8,10 +8,10 @@ App.factory('MemberService', ['$http', '$q', function($http, $q){
 
 	return {
 		
-		 searchAllMembers: function() {
-					return $http.get('')
+		 searchAllMembers: function(query) {
+					return $http.get( '/search?query=' + query )
 							.then(
-									function(response){}								
+									function(response){								
 										return response.data;
 									}, 
 									function(errResponse){
@@ -21,4 +21,21 @@ App.factory('MemberService', ['$http', '$q', function($http, $q){
 							);
 			},
 			
-});
+			
+			  fetchAllUsers: function() {
+				  
+                  return $http.get('/users/')
+                          .then(
+                                  function(response){
+                                      return response.data;
+                                  }, 
+                                  function(errResponse){
+                                      console.error('Error while fetching all users');
+                                      return $q.reject(errResponse);
+                                  }
+                          );
+          }
+			
+}		
+			
+}]);

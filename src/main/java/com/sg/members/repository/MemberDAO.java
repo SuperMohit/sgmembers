@@ -8,4 +8,6 @@ public interface MemberDAO {
 
 	List<Member> getMembers(String query);
 
+	List<Member> getAllMembers();
+
 }

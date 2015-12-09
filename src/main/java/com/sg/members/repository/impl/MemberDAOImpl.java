@@ -36,7 +36,7 @@ public class MemberDAOImpl implements MemberDAO {
 		QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Member.class)
 				.get();
 		org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword()
-				.onFields("status", "weight", "height", "race", "is_veg").matching(queryString).createQuery();
+				.onFields("status").matching(queryString).createQuery();
 
 		org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Member.class);
 
@@ -44,6 +44,18 @@ public class MemberDAOImpl implements MemberDAO {
 
 		return members;
 
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Member> getAllMembers() {
+
+		List<Member> members = new ArrayList<>();
+		Session session = getSession();
+
+		members = session.createCriteria(Member.class).setMaxResults(20).list();
+
+		return members;
 	}
 
 }

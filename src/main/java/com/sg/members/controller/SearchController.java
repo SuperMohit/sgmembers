@@ -30,4 +30,14 @@ public class SearchController {
 		
 	}
 	
+	
+	@RequestMapping("/users")
+	public ResponseEntity<List<MemberDTO>>  getAllMembers(){
+		
+		List<MemberDTO> members = memberService.getAllMembers();
+		return new ResponseEntity<List<MemberDTO>>(members, HttpStatus.OK);
+		
+		
+	}
+	
 }

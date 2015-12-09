@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.sg.members.repository.impl")
+@ComponentScan("com.sg.")
 public class SgmembersApplication {
 	
 	

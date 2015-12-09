@@ -13,10 +13,10 @@ public class MainController {
          return "home";
      }
 
-	 @RequestMapping("/error")
-     public String getErrorPage() {
-         return "error";
-     } 
+//	 @RequestMapping("/error")
+//     public String getErrorPage() {
+//         return "error";
+//     } 
 	 
 	 
 }
