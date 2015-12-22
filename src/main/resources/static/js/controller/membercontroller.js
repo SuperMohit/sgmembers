@@ -1,6 +1,6 @@
 'use strict';
 
-App.controller('MemberController', ['$scope', 'MemberService', function($scope, MemberService) {
+memberApp.controller('MemberController', ['$scope', 'MemberService', function($scope, MemberService) {
         
 	      var self = $scope ;
           

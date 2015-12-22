@@ -95,9 +95,6 @@ public class Member {
 		this.status = status;
 	}
 
-	
-
-	
 	public boolean isIs_veg() {
 		return is_veg;
 	}

@@ -4,7 +4,7 @@
 
 'use strict';
 
-App.factory('MemberService', ['$http', '$q', function($http, $q){
+memberApp.factory('MemberService', ['$http', '$q', function($http, $q){
 
 	return {
 		

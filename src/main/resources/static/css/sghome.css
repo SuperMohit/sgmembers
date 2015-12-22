@@ -1,57 +1,78 @@
-
-
-.wrap-con{
-
-      padding-top: 20px;
-
+.wrap-con {
+	padding-top: 20px;
 }
 
-.sg-greet{
-
+.sg-greet {
 	color: red;
-    font-size: 29px;
-    text-shadow: 2px 2px darkgray;
+	font-size: 29px;
+	text-shadow: 2px 2px darkgray;
 }
 
 .mem-count {
-
-        color: gray;
-
+	color: gray;
 }
 
 .row-style-1 {
-    margin-bottom: 35px !important;
-    height: 35px;
+	margin-bottom: 35px !important;
+	height: 35px;
 }
 
 .col-style-1 {
-    height: inherit;
+	height: inherit;
 }
 
-
 .color-label-1 {
-    height: 54px;
-    width: 54px !important;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 25px;
-    border-radius: 50%;
+	height: 54px;
+	width: 54px !important;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 25px;
+	border-radius: 50%;
 }
 
 .member-label-1 {
-    width: inherit;
-    text-align: center;
-    line-height: 54px;
-    vertical-align: middle;
+	width: inherit;
+	text-align: center;
+	line-height: 54px;
+	vertical-align: middle;
 }
 
 .col-style-2 {
-    height: inherit;
+	height: inherit;
 }
 
-
 .member-label-height {
-    line-height: inherit !important;
-    font-size: 15px;
+	line-height: inherit !important;
+	font-size: 15px;
+}
+
+.bg-class {
+	background-image: url("../images/loginpage.jpg");
+}
+
+.form-class {
+	width: 400px;
+	margin-top: 20%;
+	margin-right: 10%;
+	float: right;
+	color: white;
+}
+
+.form-textbox {
+	border-bottom-width: 5px;
+	border-bottom-color: burlywood;
+}
+
+.form-button {
+	
+	width: 100%;
+    background-color: burlywood;
+    color: floralwhite;
+    font-weight: 800;
+}
+
+.form-button:HOVER {
+	background-color: steelblue;
+	color: floralwhite;
 }

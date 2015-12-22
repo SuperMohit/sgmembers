@@ -10,7 +10,7 @@ public class MainController {
 	
 	 @RequestMapping("/")
      public String getHomePage() {
-         return "home";
+         return "user/loginform";
      }
 
 //	 @RequestMapping("/error")

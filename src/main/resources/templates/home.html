@@ -26,7 +26,14 @@
 			<div class="col-sm-9" style="text-align: center; padding-top: 20px;">
 
 				<div class="row">
-					<label class="sg-greet"> Kya Kar raha hai bey MONOTOSH??</label>
+
+					<div ng-show="authenticated">
+						<label class="sg-greet"> Welcome! <span>{{user.name}}</span></label>
+					</div>
+					<div ng-show="!authenticated">
+							<label class="sg-greet"> Login to see your greeting </label>
+					</div>
+
 				</div>
 
 				<div class="row">
@@ -36,58 +43,60 @@
 			</div>
 
 		</div>
-      
-      <div ng-controller="MemberController">
-		<div class="row" >
-			<div class="input-group">
-				<input type="text" class="form-control"
-					placeholder="status, weight, height..."  ng-model="query"/> <span class="input-group-btn">
 
-					<button class="btn btn-default" type="button"
-						ng-click="searchAllMembers()">Search!</button>
-				</span>
+		<div ng-controller="MemberController">
+			<div class="row">
+				<div class="input-group">
+					<input type="text" class="form-control"
+						placeholder="status, weight, height..." ng-model="query" /> <span
+						class="input-group-btn">
 
-			</div>
-			<!-- /input-group -->
-		</div>
-
-		<div class="wrap-con" style="text-align: center;">
-			<!--  -->
-		
-			<div class="row row-style-1" ng-repeat="m in members">
-				
-				<div class="col-xs-3 col-style-1">
-					<div class="color-label-1 color-index0"
-						style="background-color: rgb(0, 51, 51);">
-						
-						<label class="member-label-1"><span ng-bind="m.id"></span></label>
-					
-					</div>
+						<button class="btn btn-default" type="button"
+							ng-click="searchAllMembers()">Search!</button>
+					</span>
 
 				</div>
-				
-				<div class="col-xs-9 col-style-2">
-<!-- 					<div class="row"> -->
-<!-- 						<label -->
-<!-- 							class="member-label-1 label-align member-label-height member-name" -->
-<!-- 							data-value="0">SaaS metrics </label> -->
-<!-- 					</div> -->
-					<div class="row row-style-2">
-						<label class="member-label-1 member-label-height label-color" style="text-align: left;">
-							<span ng-bind="m.status"></span>
-						</label>
+				<!-- /input-group -->
+			</div>
+
+			<div class="wrap-con" style="text-align: center;">
+				<!--  -->
+
+				<div class="row row-style-1" ng-repeat="m in members">
+
+					<div class="col-xs-3 col-style-1">
+						<div class="color-label-1 color-index0"
+							style="background-color: rgb(0, 51, 51);">
+
+							<label class="member-label-1"><span ng-bind="m.id"></span></label>
+
+						</div>
+
 					</div>
 
-				</div>
-			</div>
-		
-		<!--  -->
-	
-		</div>
+					<div class="col-xs-9 col-style-2">
+						<!-- 					<div class="row"> -->
+						<!-- 						<label -->
+						<!-- 							class="member-label-1 label-align member-label-height member-name" -->
+						<!-- 							data-value="0">SaaS metrics </label> -->
+						<!-- 					</div> -->
+						<div class="row row-style-2">
+							<label class="member-label-1 member-label-height label-color"
+								style="text-align: left;"> <span ng-bind="m.status"></span>
+							</label>
+						</div>
 
+					</div>
+				</div>
+
+				<!--  -->
+
+			</div>
+
+		</div>
 	</div>
-</div>
-	<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller/membercontroller.js"></script>
 	<script src="js/service/memberservice.js"></script>

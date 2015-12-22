@@ -5,5 +5,6 @@
 
 'use strict';
 
-var App = angular.module('memberApp',[]);
+var memberApp = angular.module('memberApp',[]);
 
+var loginApp = angular.module('loginApp', []);
